@@ -12,6 +12,8 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var question = url.searchParams.get("which");
 
+alert(question);
+
 items.push(ans.indexOf(question));
 items.sort(function (a, b) {
     return a - b;
