@@ -17,7 +17,7 @@ items.sort(function (a, b) {
     return a - b;
 });
 items = items.filter(function (elem, pos, arr) {
-    return arr.indexOf(elem) == pos && elem > 0;
+    return arr.indexOf(elem) == pos && elem > -1;
 });
 
 populateList(items, itemsList);
