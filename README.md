@@ -6,3 +6,6 @@
 
 關卡三<br>
 ![Alt text](https://github.com/HuskyHsu/QRcode_check/blob/master/QRcode/3.png?raw=true)
+
+關卡十一<br>
+![Alt text](https://github.com/HuskyHsu/QRcode_check/blob/master/QRcode/11.png?raw=true)
