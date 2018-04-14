@@ -9,7 +9,7 @@ ans = [
 const itemsList = document.querySelector('.plates');
 
 var url_string = window.location.href;
-var question = url_string.split("?")[0].replace("which=", "");
+var question = url_string.split("?")[1].replace("which=", "");
 
 alert(question);
 
