@@ -22,7 +22,7 @@ items = items.filter(function (elem, pos, arr) {
 });
 
 items.forEach(function(item){
-    document.getElementById("approved-" + item).style.opacity = 1;
+    document.getElementById("approved-" + item).style.opacity = 0.8;
 })
 
 // populateList(items, itemsList);
