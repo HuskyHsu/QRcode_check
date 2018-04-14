@@ -1,3 +1,10 @@
+html, body{
+    font-family: '微軟正黑體';
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
 .fil0 {
     fill: none;
 }
@@ -18,24 +25,33 @@
 .fnt1 {
     font-weight: bold;
     font-size: 13.6834px;
-    font-family: '微軟正黑體';
 }
 
 .fnt0 {
     font-weight: bold;
     font-size: 15.9638px;
-    font-family: '微軟正黑體';
+}
+
+.student{
+    width: 100VW;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 table {
     border-collapse: collapse;
-    width: 100VW;
+    width: 100%;
+    font-size: 8px;
+
 }
 
 table, th, td {
     border: 1px solid black;
+    vertical-align: middle;
+    text-align: center;
 }
 
 svg {
     width: 100%;
+    height: auto;
 }
