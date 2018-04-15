@@ -25,6 +25,10 @@ items.forEach(function(item){
     document.getElementById("approved-" + item).style.opacity = 0.8;
 })
 
+if (items.length == 11){
+    document.getElementById("final").style.display = "block";
+}
+
 // populateList(items, itemsList);
 localStorage.setItem('items', JSON.stringify(items));
 

@@ -32,10 +32,19 @@ html, body{
     font-size: 15.9638px;
 }
 
-.student{
+.student, .legend, #final {
     width: 100VW;
     padding: 1em;
     box-sizing: border-box;
+}
+
+#final {
+    display: none;
+    background-color: gold;
+}
+
+.legend h2, .legend h3 {
+    margin: 0;
 }
 
 table {
