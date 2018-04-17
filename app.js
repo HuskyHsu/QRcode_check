@@ -11,7 +11,7 @@ const itemsList = document.querySelector('.plates');
 var url_string = window.location.href;
 
 var qu_st = url_string.split("?");
-if (qu_st.length > 0) {
+if (qu_st.length > 1) {
     var question = qu_st[1].replace("which=", "");
 
     // alert(question);
