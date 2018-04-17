@@ -14,8 +14,6 @@ var qu_st = url_string.split("?");
 if (qu_st.length > 1) {
     var question = qu_st[1].replace("which=", "");
 
-    // alert(question);
-    
     items.push(ans.indexOf(question));
     items.sort(function (a, b) {
         return a - b;
@@ -23,11 +21,11 @@ if (qu_st.length > 1) {
     items = items.filter(function (elem, pos, arr) {
         return arr.indexOf(elem) == pos && elem > -1;
     });
-    
-    items.forEach(function(item){
-        document.getElementById("approved-" + item).style.opacity = 0.8;
-    })
+
 }
+items.forEach(function(item){
+    document.getElementById("approved-" + item).style.opacity = 0.8;
+})
 
 if (items.length == 11){
     document.getElementById("final").style.display = "block";
