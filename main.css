@@ -43,6 +43,11 @@ html, body{
     background-color: gold;
 }
 
+.legend{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
 .legend h2, .legend h3 {
     margin: 0;
 }
