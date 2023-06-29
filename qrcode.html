@@ -18,9 +18,11 @@
       const img = document.createElement('img');
       img.src = url;
       img.alt = titleName;
+      img.style.marginTop = '-1rem'
 
-      const title = document.createElement('h4');
+      const title = document.createElement('h1');
       title.style.margin = '0';
+      title.style.fontSize = '5rem'
       title.innerText = titleName;
 
       div.appendChild(title);
@@ -34,7 +36,7 @@
 
       codes.forEach((code, index) => {
         const url = `https://chart.googleapis.com/chart?chs=${size}x${size}&cht=qr&chl=https://huskyhsu.github.io/QRcode_check/index?which=${code}`;
-        const title = `team ${index < 9 ? '0' : ''}${index + 1}`;
+        const title = `Team ${index < 9 ? '0' : ''}${index + 1}`;
         const div = createItem(url, title);
 
         body.appendChild(div);
@@ -64,7 +66,7 @@
 
     const div = createItem(
       `https://chart.googleapis.com/chart?chs=${size}x${size}&cht=qr&chl=https://huskyhsu.github.io/QRcode_check`,
-      '門口'
+      '報到'
     );
     document.querySelector('body').appendChild(div);
   </script>
