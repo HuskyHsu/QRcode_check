@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR code</title>
+  </head>
+  <body style="display: flex; flex-wrap: wrap"></body>
+
+  <script>
+    function createImagesFromArray(codes) {
+      const body = document.querySelector('body');
+
+      codes.forEach((code, index) => {
+        const div = document.createElement('div');
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        div.style.alignItems = 'center';
+
+        const img = document.createElement('img');
+        img.src = `https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://huskyhsu.github.io/QRcode_check/index?code=${code}`;
+        img.alt = `team ${index < 9 ? '0' : ''}${index + 1}`;
+
+        const title = document.createElement('h4');
+        title.style.margin = '0';
+        title.innerText = `team ${index < 9 ? '0' : ''}${index + 1}`;
+
+        div.appendChild(title);
+        div.appendChild(img);
+
+        body.appendChild(div);
+      });
+    }
+
+    // 使用範例
+    const codes = [
+      'ZQWWNAwb',
+      'FstM3d4b',
+      'O35WLUKM',
+      'zufNtN43',
+      '596Y14mW',
+      'fMT3B12v',
+      '72v6orIm',
+      'IrpLBSPf',
+      'jyG9tSYO',
+      'Uq1HlS9E',
+      'pzM1JXqP',
+      'jh57K9Pd',
+      'T3nY6RkE',
+      'qA2d8XsF',
+      'H9bC4mV7',
+    ];
+
+    createImagesFromArray(codes);
+  </script>
+</html>
