@@ -11,7 +11,7 @@
     />
   </head>
 
-  <body>
+  <body style="padding: 1rem">
     <details id="info" open>
       <summary id="summary" style="display: none; margin: 0.5rem 0">
         點我查看活動說明👆
@@ -39,7 +39,7 @@
       </div>
 
       <div id="flow">
-        <h4>今日流程</h4>
+        <strong>今日流程</strong>
         <div style="display: flex; align-self: start">
           <div style="flex: 1">
             <ul>
@@ -73,6 +73,16 @@
       您已參與10個組別，辛苦了，請點選連結，協助填寫問卷。
       <a href="https://forms.gle/QyMRscCQSi1JZmVLA">問卷連結</a>
     </div>
+
+    <div
+      id="groups"
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-top: 1rem;
+      "
+    ></div>
 
     <script src="./app.js"></script>
   </body>

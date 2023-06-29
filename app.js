@@ -139,3 +139,43 @@ const groups = [
     code: "H9bC4mV7"
   }
 ];
+
+function createItem(group) {
+  const div = document.createElement('div');
+  div.style.display = 'flex';
+  div.style.flexDirection = 'column';
+  div.style.alignItems = 'flex-start';
+  div.style.backgroundColor = '#e7e7e7';
+  div.style.borderRadius = '10px';
+  div.style.padding = '10px';
+
+  const title = document.createElement('p');
+  title.innerText = `${group.id} - ${group.topic}`;
+  title.style.margin = '0';
+  title.style.fontWeight = 'bold';
+
+  const classP = document.createElement('p');
+  classP.innerText = `班級：${group.class}`;
+  classP.style.margin = '0';
+
+  const members = document.createElement('p');
+  members.innerText = `學生：${group.member.join(', ')}`;
+  members.style.margin = '0';
+
+  const floor = document.createElement('p');
+  floor.innerText = `地點：${group.floor}${group.room ? ` (${group.room})` : ''}`;
+  floor.style.marginTop = '0.3rem';
+  floor.style.marginBottom = '0';
+
+  div.appendChild(title);
+  div.appendChild(classP);
+  div.appendChild(members);
+  div.appendChild(floor);
+
+  return div;
+}
+
+groups.forEach((group) => {
+  const item = createItem(group);
+  document.getElementById('groups').appendChild(item);
+})
