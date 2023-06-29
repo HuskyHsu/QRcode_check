@@ -160,6 +160,7 @@ function createItem(group) {
   div.style.borderRadius = '10px';
   div.style.padding = '10px';
   div.style.position = 'relative';
+  div.style.boxShadow = `2px 4px 4px rgba(0, 0, 0, 0.2)`;
 
   const title = document.createElement('p');
   title.innerText = `${group.id} - ${group.topic}`;
@@ -173,7 +174,7 @@ function createItem(group) {
   const members = document.createElement('p');
   members.innerText = `學生：${group.member.join(', ')}`;
   members.style.margin = '0';
-  members.style.width = '75%';
+  // members.style.width = '75%';
 
   const floor = document.createElement('p');
   floor.innerText = `地點：${group.floor}${
@@ -184,9 +185,9 @@ function createItem(group) {
   const img = document.createElement('img');
   img.src = './cover_Images/seal.png';
   img.style.position = 'absolute';
-  img.style.width = '4rem';
-  img.style.right = `${Math.random() * 1.5 + 0.1}rem`;
-  img.style.top = `0.8rem`;
+  img.style.width = '3rem';
+  img.style.right = `${Math.random() * 1 + 0}rem`;
+  img.style.top = `-0.5rem`;
   const minAngle = -45;
   const maxAngle = 45;
 
