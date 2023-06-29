@@ -173,6 +173,7 @@ function createItem(group) {
   const members = document.createElement('p');
   members.innerText = `學生：${group.member.join(', ')}`;
   members.style.margin = '0';
+  members.style.width = '75%';
 
   const floor = document.createElement('p');
   floor.innerText = `地點：${group.floor}${
@@ -183,8 +184,9 @@ function createItem(group) {
   const img = document.createElement('img');
   img.src = './cover_Images/seal.png';
   img.style.position = 'absolute';
-  img.style.width = '5rem';
-  img.style.right = `${Math.random() * 2 + 0.5}rem`;
+  img.style.width = '4rem';
+  img.style.right = `${Math.random() * 1.5 + 0.1}rem`;
+  img.style.top = `0.8rem`;
   const minAngle = -45;
   const maxAngle = 45;
 
@@ -192,7 +194,7 @@ function createItem(group) {
     Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
   img.style.transform = 'rotate(' + randomAngle + 'deg)';
   img.style.display = items[group.code] || false ? 'block' : 'none';
-  img.style.opacity = 0.7;
+  img.style.opacity = 0.5;
 
   div.appendChild(title);
   div.appendChild(classP);
