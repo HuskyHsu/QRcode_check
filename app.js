@@ -192,6 +192,7 @@ function createItem(group) {
     Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
   img.style.transform = 'rotate(' + randomAngle + 'deg)';
   img.style.display = items[group.code] || false ? 'block' : 'none';
+  img.style.opacity = 0.7;
 
   div.appendChild(title);
   div.appendChild(classP);
