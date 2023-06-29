@@ -16,7 +16,7 @@ document.getElementById('summary').style.display = isShowInfo
   ? 'none'
   : 'block';
 
-const finishCount = Object.keys(items);
+const finishCount = Object.keys(items).length;
 
 document.getElementById('final').style.display =
   finishCount >= 10 ? 'block' : 'none';
