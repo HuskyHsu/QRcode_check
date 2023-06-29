@@ -7,7 +7,7 @@ if (qu_st.length > 1) {
   items[question] = true;
 }
 
-localStorage.setItem('items', JSON.stringify(items));
+localStorage.setItem('items_2023', JSON.stringify(items));
 
 const isShowInfo = qu_st.length <= 1;
 
