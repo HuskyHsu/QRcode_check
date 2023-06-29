@@ -21,6 +21,12 @@ const finishCount = Object.keys(items).length;
 document.getElementById('final').style.display =
   finishCount >= 10 ? 'block' : 'none';
 
+if (finishCount > 0 && finishCount < 10) {
+  document.getElementById('count').innerText = `要請您再參觀${
+    10 - finishCount
+  }組，謝謝您`;
+}
+
 const groups = [
   {
     id: '第一組',
