@@ -1,33 +1,28 @@
-const items = JSON.parse(localStorage.getItem('items_2023')) || {};
+'use strict';
 
-const qu_st = window.location.href.split('?');
+var items = JSON.parse(localStorage.getItem('items_2023')) || {};
+var qu_st = window.location.href.split('?');
 if (qu_st.length > 1) {
-  const question = qu_st[1].replace('which=', '');
-
+  var question = qu_st[1].replace('which=', '');
   items[question] = true;
 }
-
 localStorage.setItem('items_2023', JSON.stringify(items));
-
-const isShowInfo = qu_st.length <= 1;
-
+var isShowInfo = qu_st.length <= 1;
 document.getElementById('info').open = isShowInfo;
 document.getElementById('summary').style.display = isShowInfo
   ? 'none'
   : 'block';
-
-const finishCount = Object.keys(items).length;
-
+var finishCount = Object.keys(items).length;
 document.getElementById('final').style.display =
   finishCount >= 10 ? 'block' : 'none';
-
 if (finishCount > 0 && finishCount < 10) {
-  document.getElementById('count').innerText = `要請您再參觀${
-    10 - finishCount
-  }組，謝謝您`;
+  document.getElementById('count').innerText =
+    '\u8981\u8ACB\u60A8\u518D\u53C3\u89C0'.concat(
+      10 - finishCount,
+      '\u7D44\uFF0C\u8B1D\u8B1D\u60A8'
+    );
 }
-
-const groups = [
+var groups = [
   {
     id: '第一組',
     floor: '一樓',
@@ -156,9 +151,8 @@ const groups = [
     code: 'H9bC4mV7',
   },
 ];
-
 function createItem(group) {
-  const div = document.createElement('div');
+  var div = document.createElement('div');
   div.style.display = 'flex';
   div.style.flexDirection = 'column';
   div.style.alignItems = 'flex-start';
@@ -166,53 +160,45 @@ function createItem(group) {
   div.style.borderRadius = '10px';
   div.style.padding = '10px';
   div.style.position = 'relative';
-  div.style.boxShadow = `2px 4px 4px rgba(0, 0, 0, 0.2)`;
-
-  const title = document.createElement('p');
-  title.innerText = `${group.id} - ${group.topic}`;
+  div.style.boxShadow = '2px 4px 4px rgba(0, 0, 0, 0.2)';
+  var title = document.createElement('p');
+  title.innerText = ''.concat(group.id, ' - ').concat(group.topic);
   title.style.margin = '0';
   title.style.fontWeight = 'bold';
-
-  const classP = document.createElement('p');
-  classP.innerText = `班級：${group.class}`;
+  var classP = document.createElement('p');
+  classP.innerText = '\u73ED\u7D1A\uFF1A'.concat(group['class']);
   classP.style.margin = '0';
-
-  const members = document.createElement('p');
-  members.innerText = `學生：${group.member.join(', ')}`;
+  var members = document.createElement('p');
+  members.innerText = '\u5B78\u751F\uFF1A'.concat(group.member.join(', '));
   members.style.margin = '0';
   // members.style.width = '75%';
 
-  const floor = document.createElement('p');
-  floor.innerText = `地點：${group.floor}${
-    group.room ? ` (${group.room})` : ''
-  }`;
+  var floor = document.createElement('p');
+  floor.innerText = '\u5730\u9EDE\uFF1A'
+    .concat(group.floor)
+    .concat(group.room ? ' ('.concat(group.room, ')') : '');
   floor.style.margin = '0';
-
-  const img = document.createElement('img');
+  var img = document.createElement('img');
   img.src = './cover_Images/seal.png';
   img.style.position = 'absolute';
   img.style.width = '3rem';
-  img.style.right = `${Math.random() * 1 + 0}rem`;
-  img.style.top = `-0.5rem`;
-  const minAngle = -45;
-  const maxAngle = 45;
-
-  const randomAngle =
+  img.style.right = ''.concat(Math.random() * 1 + 0, 'rem');
+  img.style.top = '-0.5rem';
+  var minAngle = -45;
+  var maxAngle = 45;
+  var randomAngle =
     Math.floor(Math.random() * (maxAngle - minAngle + 1)) + minAngle;
   img.style.transform = 'rotate(' + randomAngle + 'deg)';
   img.style.display = items[group.code] || false ? 'block' : 'none';
   img.style.opacity = 0.5;
-
   div.appendChild(title);
   div.appendChild(classP);
   div.appendChild(members);
   div.appendChild(floor);
   div.appendChild(img);
-
   return div;
 }
-
-groups.forEach((group) => {
-  const item = createItem(group);
+groups.forEach(function (group) {
+  var item = createItem(group);
   document.getElementById('groups').appendChild(item);
 });
